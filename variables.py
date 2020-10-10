@@ -12,3 +12,9 @@ job_satisfaction_data = pd.read_csv('datasets/job_satisfaction.csv')
 underemployment_data = pd.read_csv('datasets/underemployment.csv')
 unemployment_data = pd.read_csv('datasets/unemployment.csv')
 
+#Legal
+crime_data = pd.read_csv('datasets/crime.csv')
+
+#Health
+health_data = pd.read_csv('datasets/perceived_health.csv')
+life_expectation_data = pd.read_csv('datasets/life_expectancy.csv')
