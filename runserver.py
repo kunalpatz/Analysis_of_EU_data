@@ -2,6 +2,8 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from graph_data import *
+from summary import *
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
@@ -133,6 +135,36 @@ html.H6(children='######################################', style={'color': 'whit
 html.H4(
         children="Summary",
         style={'color': '#44874e', 'fontSize': 28, 'text-align':'center'}),
+
+
+
+html.Div(
+        [
+            dcc.Dropdown(
+                id="Country",
+                options=[{
+                    'label': i,
+                    'value': i
+                } for i in summary['Country']], value='Belgium'),
+        ],
+        style={'width': '25%',
+               'display': 'inline-block'}),
+    dcc.Graph(id='line_polar'),
 ])
+
+@app.callback(
+    dash.dependencies.Output('line_polar', 'figure'),
+    [dash.dependencies.Input('Country', 'value')])
+def update_graph(Country):
+    if Country == "Belgium":
+        df_plot = data.copy()
+    else:
+        df_plot = data[data['Country'] == Country]
+    trace = px.line_polar(df_plot, theta=data['Country'], r=data[Country], line_close=True, template="plotly_dark",
+                          title='Summary of Factors (%)')
+    return trace
+
+
+
 if __name__ == '__main__':
     app.run_server(debug=True)
