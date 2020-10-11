@@ -3,7 +3,7 @@
 
 ### Authors:
 ```
-PATIL Kunal (Articial Intelligence Systems)
+PATIL Kunal (Artificial Intelligence Systems)
 MARATH-PONMADOM Salil (Data Science and Analytics)
 ```
 
