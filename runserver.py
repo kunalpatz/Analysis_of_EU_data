@@ -35,7 +35,7 @@ app.layout = html.Div(children=[
         figure=fig_gdp
     ),
     html.H5(
-        children="Observation and Comments: By observing above distribution, we can see that Countries like UK, France, Italy and Spain have highest GDP that other european countries, Whereas Germany have Highest GDP among all.",
+        children="Observation and Comments: By observing above distribution, we can see that Countries like UK, France, Italy and Spain have highest GDP than other european countries, Whereas Germany have Highest GDP among all.",
         style={'color': 'darkslateblue', 'fontSize': 16}),
 
     html.H6(children='######################################',
@@ -45,7 +45,7 @@ app.layout = html.Div(children=[
         figure=fig_low_savings
     ),
     html.H5(
-        children="Observation and Comments: Countries like Bulgaria, Cyprus, Greece, Croatia, Lithuania, Romania have Lower savings that other european countries, Whereas Latvia have Lowest savings, 60%",
+        children="Observation and Comments: Countries like Bulgaria, Cyprus, Greece, Croatia, Lithuania, Romania have Lower savings that other european countries, Whereas Latvia have Lowest savings, i.e. 60%",
         style={'color': 'darkslateblue', 'fontSize': 16}),
     html.H6(children='######################################',
             style={'color': '#5d5179', 'fontSize': 2, 'text-align': 'center', 'backgroundColor': '#5d5179'}),
@@ -69,7 +69,7 @@ app.layout = html.Div(children=[
         figure=fig_job_satisfaction
     ),
     html.H5(
-        children="Observation and Comments: Only Two of the European Countries are having low Job Satisfaction, namely Turkey and Bulgaria. Rest all countries are satified with their job.",
+        children="Observation and Comments: Only two of the European Countries are having low Job Satisfaction, Turkey and Bulgaria. Rest all citizens in rest countries are satified with their jobs.",
         style={'color': 'darkslateblue', 'fontSize': 16}),
     html.H6(children='######################################',
             style={'color': '#5d5179', 'fontSize': 2, 'text-align': 'center', 'backgroundColor': '#5d5179'}),
@@ -91,7 +91,9 @@ app.layout = html.Div(children=[
         figure=fig_close_relation
     ),
     html.H5(
-        children="Observation and Comments: Countries like Czechia,Slovakia and Finland are among those High Percentage of Close Relations in Europe.Other Countries like Hungary , Spain , Cyprus also have a good percentage in Close Relations. While Countries like Italy , Luxembourg and Portugal are the countries with least percantage in comparison to other countries in Europe.  ",
+        children="Observation and Comments: Countries like Czechia, Slovakia and Finland are among those High Percentage of Close Relations in Europe."
+                 "Other Countries like Hungary, Spain, Cyprus also have a good percentage in Close Relations. "
+                 "While Countries like Italy, Luxembourg and Portugal are the countries with least percantage in comparison to other countries in Europe.",
         style={'color': 'black', 'fontSize': 16}),
 
     html.H6(children='######################################',
@@ -102,7 +104,7 @@ app.layout = html.Div(children=[
     ),
     html.H5(
         children="Observation and Comments: Citizens of Switzerland have more trustful Political department, "
-                 "followed by Finland and Malta. Whereas Italy, Portugal, Slovenia, Greece and Spain have least trust in Political department.",
+                 "followed by Finland Denmark, Norway and Malta. Whereas Italy, Portugal, Slovenia, Greece and Spain have least trust in Political department.",
         style={'color': 'darkslateblue', 'fontSize': 16}),
 
     html.H6(children='######################################',
@@ -126,7 +128,6 @@ app.layout = html.Div(children=[
     ),
     html.H5(
         children="Observation and Comments: Citizens of Finland are most trustful with Police department. Whereas Citizens of Denmark are trustful with Police as well as Legal department "
-                 "and Citizens of Switzerland have more trustful Political department."
                  "On average, Slovania have both values low, the country with less trust on police and legal system!",
         style={'color': 'darkslateblue', 'fontSize': 16}),
 
@@ -134,7 +135,7 @@ app.layout = html.Div(children=[
             style={'color': '#180847', 'fontSize': 7, 'text-align': 'center', 'backgroundColor': '#180847'}),
 
     html.H4(
-        children="Weather",
+        children="Environment",
         style={'color': '#44874e', 'fontSize': 28, 'text-align': 'center'}),
 
     dcc.Graph(
@@ -143,6 +144,15 @@ app.layout = html.Div(children=[
     ),
     html.H5(
         children="Observation and Comments: Countries Like Greece , Spain , Portugal leads in Average Temperature in Europe while Finland , Iceland , Norway are those with less in average temparature in Comparison to the rest of EU Countries.",
+        style={'color': 'darkslateblue', 'fontSize': 16}),
+    html.H6(children='######################################',
+            style={'color': '#5d5179', 'fontSize': 2, 'text-align': 'center', 'backgroundColor': '#5d5179'}),
+    dcc.Graph(
+        id='env_satisfaction',
+        figure=fig_env_satisfaction
+    ),
+    html.H5(
+        children="Observation and Comments: Austria has the highest percentage of enivirooment satisfaction followed by Denmark and Norway. While Bulgaria has the Least Environmental Satisfaction percentage where as Italy and Cyprus is also Low in Percentage .",
         style={'color': 'darkslateblue', 'fontSize': 16}),
 
     html.H6(children='######################################',
@@ -157,8 +167,8 @@ app.layout = html.Div(children=[
         figure=fig_health_data
     ),
     html.H5(
-        children="Observation and Comments: Cyrus, Greece, Ireland, Iceland, Norway, Sweden, Switchzerland and "
-                 "UK have very high rate of very good health.",
+        children="Observation and Comments: Cyprus, Greece, Ireland, Iceland, Norway, Sweden, Switchzerland and "
+                 "UK have very high rate of good health.",
         style={'color': 'darkslateblue', 'fontSize': 16}),
     html.H6(children='######################################',
             style={'color': '#5d5179', 'fontSize': 2, 'text-align': 'center', 'backgroundColor': '#5d5179'}),
@@ -193,8 +203,8 @@ app.layout = html.Div(children=[
         figure=fig_life_satisfaction_subplot
     ),
     html.H5(
-        children="Observation and Comments: Countries like Denmark , Iceland , Finland have High rate of Leisure and Life Satisfaction."
-                 "Where as Bulgaria , Hungry ,Turkey are those countries with least rates in Comparison."
+        children="Observation and Comments: Countries like Denmark, Iceland, Finland have High rate of Leisure and Life Satisfaction."
+                 "Where as Bulgaria, Hungry, Turkey are those countries with least rates in Comparison."
                  "In general that the scandinavian countries has the good rate Leisure as well as Life Satisfaction.",
         style={'color': 'darkslateblue', 'fontSize': 16}),
 
@@ -220,6 +230,26 @@ app.layout = html.Div(children=[
         style={'width': '25%',
                'display': 'inline-block'}),
     dcc.Graph(id='line_polar'),
+    html.H6(children='######################################',
+            style={'color': '#180847', 'fontSize': 7, 'text-align': 'center', 'backgroundColor': '#180847'}),
+    html.H4(
+        children="Conclusion",
+        style={'color': '#44874e', 'fontSize': 28, 'text-align': 'center'}),
+    html.H5(
+        children="The country having Highest Economy is Germany."
+                 " Highest rate of Employment is Iceland,"
+                 " Good Politics establishment in Denmark,"
+                 " Good Environment in Austria,"
+                 " Better Health facilities in Sweden,"
+                 "One can look for Life Satisfaction in Denmark "
+                 "And Legal department is very trustful in Denmark too."
+                 " So we can say in multiple aspects, Denmark is really good country to live!",
+        style={'color': 'darkslateblue', 'fontSize': 16}),
+    html.H6(children='######################################',
+            style={'color': '#180847', 'fontSize': 7, 'text-align': 'center', 'backgroundColor': '#180847'}),
+    html.H1(children='Merci à tous!!',
+            style={'color': 'ghostwhite', 'fontSize': 50, 'font-family': 'cursive', 'text-align': 'center',
+                   'backgroundColor': '#311e73'}),
 ])
 
 
@@ -235,6 +265,8 @@ def update_graph(Country):
                           title='Summary of Factors (%)')
     return trace
 
+
+app.title = 'Analysis of Life in Europe'
 
 if __name__ == '__main__':
     app.run_server(debug=True)

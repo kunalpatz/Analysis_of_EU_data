@@ -160,6 +160,7 @@ layout = go.Layout(title='Average Temperature in Europe',
 fig_avg_temp = go.Figure(data=trace, layout=layout)
 fig_avg_temp.update_layout(margin={"r": 0, "t": 30, "l": 0, "b": 0})
 
+fig_env_satisfaction = px.bar_polar(euro_stats_data, r="prct_env_satis_high", theta="country", color="prct_env_satis_high", title=" Environment Satisfaction in Europe")
 ############################################ Life Satisfaction ############################################
 
 fig_life_satisfaction_subplot = go.Figure()
