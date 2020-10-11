@@ -152,7 +152,7 @@ app.layout = html.Div(children=[
         figure=fig_env_satisfaction
     ),
     html.H5(
-        children="Observation and Comments: Austria has the highest percentage of enivirooment satisfaction followed by Denmark and Norway. While Bulgaria has the Least Environmental Satisfaction percentage where as Italy and Cyprus is also Low in Percentage .",
+        children="Observation and Comments: Austria has the highest percentage of environment satisfaction followed by Denmark and Norway. While Bulgaria has the Least Environmental Satisfaction percentage where as Italy and Cyprus is also Low in Percentage.",
         style={'color': 'darkslateblue', 'fontSize': 16}),
 
     html.H6(children='######################################',
