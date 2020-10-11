@@ -234,7 +234,7 @@ app.layout = html.Div(children=[
             style={'color': '#180847', 'fontSize': 7, 'text-align': 'center', 'backgroundColor': '#180847'}),
     html.H4(
         children="Conclusion",
-        style={'color': '#44874e', 'fontSize': 28, 'text-align': 'center'}),
+        style={'color': '#44874e', 'fontSize': 30, 'text-align': 'center'}),
     html.H5(
         children="The country having Highest Economy is Germany."
                  " Highest rate of Employment is Iceland,"
@@ -244,9 +244,13 @@ app.layout = html.Div(children=[
                  "One can look for Life Satisfaction in Denmark "
                  "And Legal department is very trustful in Denmark too."
                  " So we can say in multiple aspects, Denmark is really good country to live!",
-        style={'color': 'darkslateblue', 'fontSize': 16}),
+        style={'color': 'darkslateblue', 'fontSize': 18}),
     html.H6(children='######################################',
             style={'color': '#180847', 'fontSize': 7, 'text-align': 'center', 'backgroundColor': '#180847'}),
+    html.H6(children='######################################',
+            style={'color': 'white', 'fontSize': 7, 'text-align': 'center', 'backgroundColor': 'white'}),
+    html.H6(children='######################################',
+            style={'color': 'white', 'fontSize': 7, 'text-align': 'center', 'backgroundColor': 'white'}),
     html.H1(children='Merci à tous!!',
             style={'color': 'ghostwhite', 'fontSize': 50, 'font-family': 'cursive', 'text-align': 'center',
                    'backgroundColor': '#311e73'}),

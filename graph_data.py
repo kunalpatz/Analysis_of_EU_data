@@ -13,7 +13,7 @@ trace = [go.Choropleth(
     text=gdp_data['country'],
     z=gdp_data['gdp']
 )]
-layout = go.Layout(title='GDP in European Countries',
+layout = go.Layout(title='GDP in European Countries (M)',
                    geo=go.layout.Geo(
                        scope='europe',
                        showcountries=True))
@@ -49,11 +49,11 @@ fig_job_satisfaction.add_trace(
            name='Low Satisfaction'
            ))
 fig_job_satisfaction.update_layout(
-    title="Job Satisfaction")
+    title="Job Satisfaction (%)")
 
 # Unemployment
-fig_unemployment = px.line(unemployment_data, x="country", y="unemp_rate", title='Percentage of Unemployment', )
-
+fig_unemployment = px.line(unemployment_data, x="country", y="unemp_rate", title='Rate of Unemployment', labels={
+    "unemp_rate": "Unemployment rate"})
 
 ############################################ Legal ############################################
 
@@ -106,7 +106,7 @@ very_bad = go.Bar(
     marker=dict(color='#2a3b36'),
 )
 data = [very_good, good, fair, bad, very_bad]
-layout = go.Layout(title='Health in Europe',
+layout = go.Layout(title='Health in Europe (%)',
                    barmode='relative')
 fig_health_data = go.Figure(data=data, layout=layout)
 
@@ -123,7 +123,7 @@ trace = [go.Choropleth(
     text=life_expectation_data['country'],
     z=life_expectation_data['life_expect']
 )]
-layout = go.Layout(title='Life Expectancy in Europe',
+layout = go.Layout(title='Life Expectancy in Europe (%)',
                    geo=go.layout.Geo(
                        scope='europe',
                        showcountries=True))
@@ -141,9 +141,9 @@ fig_close_relation = px.line(close_relations, y='prct_close_relat', x='country',
 # Political Trust
 fig_political_trust = px.bar(euro_stats_data, x='country', y='political_trust_rating',
                              labels={"political_trust_rating": "Political Trust Rating"},
-                             title='Political Trust Percentage')
+                             title='Political Trust Rating')
 
-############################################ Weather ############################################
+############################################ Environment ############################################
 
 trace = [go.Choropleth(
     colorscale='oranges',
@@ -152,7 +152,7 @@ trace = [go.Choropleth(
     text=euro_stats_data['country'],
     z=euro_stats_data['avg_temp']
 )]
-layout = go.Layout(title='Average Temperature in Europe',
+layout = go.Layout(title='Average Temperature in Europe (℃)',
                    geo=go.layout.Geo(
                        scope='europe',
                        showcountries=True))
@@ -160,7 +160,8 @@ layout = go.Layout(title='Average Temperature in Europe',
 fig_avg_temp = go.Figure(data=trace, layout=layout)
 fig_avg_temp.update_layout(margin={"r": 0, "t": 30, "l": 0, "b": 0})
 
-fig_env_satisfaction = px.bar_polar(euro_stats_data, r="prct_env_satis_high", theta="country", color="prct_env_satis_high", title=" Environment Satisfaction in Europe")
+fig_env_satisfaction = px.bar_polar(euro_stats_data, r="prct_env_satis_high", theta="country",
+                                    color="prct_env_satis_high", title=" Environment Satisfaction in Europe (%)")
 ############################################ Life Satisfaction ############################################
 
 fig_life_satisfaction_subplot = go.Figure()
@@ -172,4 +173,4 @@ fig_life_satisfaction_subplot.add_trace(
     go.Scatter(x=euro_stats_data['country'], y=euro_stats_data['prct_life_satis_high'],
                mode='lines', line=dict(color='deepskyblue'), name='Life Satisfaction'))
 fig_life_satisfaction_subplot.update_layout(
-    title="Leisure and Life Satisfaction")
+    title="Leisure and Life Satisfaction (%)")
